@@ -4,22 +4,41 @@ body {
     color: #333;
     margin: 0;
     padding: 0;
+}
+
+.container {
+    display: grid;
+    grid-template-areas:
+        "header"
+        "main"
+        "footer";
+    grid-template-columns: 1fr;
+    gap: 20px;
     text-align: center;
 }
 
-h1 {
-    color: #ffffff;
-    font-size: 2.5em;
+header {
+    grid-area: header;
     margin-top: 40px;
 }
-
-h2 {
+header h1 {
+    color: #ffffff;
+    font-size: 2.5em;
+    margin-bottom: 5px;
+}
+header h2 {
     color: #e0e7ff;
     font-weight: 400;
-    margin-bottom: 20px;
 }
 
-img {
+main {
+    grid-area: main;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+main img {
     width: 130px;
     height: 130px;
     border-radius: 50%;
@@ -32,19 +51,17 @@ img {
 section {
     background: #ffffff;
     width: 65%;
-    margin: 20px auto;
+    margin: 10px 0;
     padding: 25px;
     border-radius: 20px;
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
     text-align: left;
 }
-
-h3 {
+section h3 {
     color: #1e3a8a;
     margin-top: 0;
 }
-
-p {
+section p, section ul {
     font-size: 1em;
     line-height: 1.6;
 }
@@ -60,7 +77,19 @@ a {
     text-decoration: none;
     font-weight: bold;
 }
-
 a:hover {
     text-decoration: underline;
+}
+
+footer {
+    grid-area: footer;
+    color: #ffffff;
+    font-size: 0.9em;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+    section {
+        width: 85%;
+    }
 }
